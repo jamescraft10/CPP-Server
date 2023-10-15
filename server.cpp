@@ -37,14 +37,14 @@ std::string ChoosePage(std::string Path) {
 }
 
 std::string ChooseResponse(std::string Path) {
-    if (Path == "") {
+    if(Path == "") {
         return "text/html";
     }
-    if (Path.find(".html") != std::string::npos) {
+    if(Path.find(".html") != std::string::npos) {
         return "text/html";
-    } else if (Path.find(".css") != std::string::npos) {
+    } else if(Path.find(".css") != std::string::npos) {
         return "text/css";
-    } else if (Path.find(".js") != std::string::npos) {
+    } else if(Path.find(".js") != std::string::npos) {
         return "application/javascript";
     } else {
         return "text/html";
