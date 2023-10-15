@@ -1,6 +1,6 @@
 /*
 By: JamesCraft
-Compile: g++ -o main main.cpp -lws2_32
+Compile: g++ -o server server.cpp -lws2_32
 */
 
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
@@ -27,18 +27,12 @@ std::string GetFileData(std::string File) {
 }
 
 std::string ChoosePage(std::string Path) {
-    if (Path == "") {
-        return "html/index.html";
-    }
-    if(Path == "style/style.css") {
-        return "style/style.css";
-    }
-    if(Path == "style/404.css") {
-        return "style/404.css";
-    }
-    if(Path == "html/index.html") {
-        return "html/index.html";
-    }
+    if(Path == "") {return "html/index.html";}
+    if(Path == "html/index.html") {return "html/index.html";}
+    if(Path == "style/style.css") {return "style/style.css";}
+    if(Path == "scripts/index.js") {return "javascript/index.js";}
+    if(Path == "style/404.css") {return "style/404.css";}
+
     return "html/404.html";
 }
 
